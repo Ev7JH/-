@@ -26,6 +26,20 @@
       </div>
 
       <div class="social-links">
+        <!-- Telegram -->
+        <a 
+          :href="telegramLink" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="social-link telegram"
+        >
+          <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.66-.35-1.02.22-1.61.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.01-.12.03-2.02 1.28-5.7 3.77-.54.37-1.03.55-1.47.54-.48-.01-1.41-.27-2.1-.5-.84-.27-1.51-.42-1.45-.89.03-.25.37-.51 1.02-.78 3.13-1.36 5.22-2.26 6.27-2.69 2.99-1.23 3.61-1.44 4.01-1.44.09 0 .29.02.42.13.11.09.14.21.15.33-.01.11-.02.21-.03.33z"/>
+          </svg>
+          <span>Telegram</span>
+        </a>
+        
+        <!-- Instagram -->
         <a 
           :href="instagramLink" 
           target="_blank" 
@@ -48,6 +62,7 @@ export default {
   data() {
     return {
       videoSource: '/-/videos/my-video.mp4',
+      telegramLink: 'https://t.me/+4g4yPJDhA-MwZDcy',  
       instagramLink: 'https://www.instagram.com/kasschey?igsh=cjRuanlkMHJwOHF4',
       isMuted: true
     }
@@ -92,7 +107,6 @@ export default {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-/* Минималистический тёмный фон */
 .video-page {
   width: 100%;
   min-height: 100vh;
@@ -122,7 +136,6 @@ export default {
   object-fit: cover;
 }
 
-/* Кнопка звука - минималистичная */
 .sound-button {
   position: absolute;
   bottom: 16px;
@@ -152,7 +165,6 @@ export default {
   height: 20px;
 }
 
-/* Социальная кнопка - только Instagram */
 .social-links {
   display: flex;
   gap: 16px;
@@ -190,101 +202,33 @@ export default {
   height: 20px;
 }
 
-/* Адаптация для планшетов */
+
 @media (max-width: 768px) {
-  .video-page {
-    padding: 16px;
-  }
-  
-  .video-container {
-    max-width: 95%;
-    border-radius: 20px;
-  }
-  
-  .social-link {
-    padding: 8px 24px;
-    font-size: 14px;
-    gap: 8px;
-  }
-  
-  .social-icon {
-    width: 18px;
-    height: 18px;
-  }
-  
-  .sound-button {
-    width: 36px;
-    height: 36px;
-    bottom: 12px;
-    right: 12px;
-  }
+  .video-page { padding: 16px; }
+  .video-container { max-width: 95%; border-radius: 20px; }
+  .social-link { padding: 8px 24px; font-size: 14px; gap: 8px; }
+  .social-icon { width: 18px; height: 18px; }
+  .sound-button { width: 36px; height: 36px; bottom: 12px; right: 12px; }
 }
 
-/* Адаптация для телефонов */
 @media (max-width: 480px) {
-  .video-page {
-    padding: 12px;
-  }
-  
-  .video-container {
-    max-width: 100%;
-    border-radius: 18px;
-    margin-bottom: 24px;
-  }
-  
-  .social-link {
-    padding: 7px 20px;
-    font-size: 13px;
-    gap: 7px;
-  }
-  
-  .social-icon {
-    width: 16px;
-    height: 16px;
-  }
-  
-  .sound-button {
-    width: 32px;
-    height: 32px;
-    bottom: 10px;
-    right: 10px;
-  }
-  
-  .sound-button svg {
-    width: 16px;
-    height: 16px;
-  }
+  .video-page { padding: 12px; }
+  .video-container { max-width: 100%; border-radius: 18px; margin-bottom: 24px; }
+  .social-link { padding: 7px 20px; font-size: 13px; gap: 7px; }
+  .social-icon { width: 16px; height: 16px; }
+  .sound-button { width: 32px; height: 32px; bottom: 10px; right: 10px; }
+  .sound-button svg { width: 16px; height: 16px; }
 }
 
-/* Для больших экранов */
 @media (min-width: 1200px) {
-  .video-container {
-    max-width: 900px;
-  }
-  
-  .social-links {
-    max-width: 900px;
-  }
-  
-  .social-link {
-    padding: 12px 32px;
-    font-size: 16px;
-  }
-  
-  .sound-button {
-    width: 44px;
-    height: 44px;
-  }
+  .video-container { max-width: 900px; }
+  .social-links { max-width: 900px; }
+  .social-link { padding: 12px 32px; font-size: 16px; }
+  .sound-button { width: 44px; height: 44px; }
 }
 
-/* Убираем эффекты нажатия на сенсорных устройствах */
 @media (hover: none) and (pointer: coarse) {
-  .social-link:hover {
-    transform: none;
-  }
-  
-  .social-link:active {
-    transform: scale(0.96);
-  }
+  .social-link:hover { transform: none; }
+  .social-link:active { transform: scale(0.96); }
 }
 </style>
