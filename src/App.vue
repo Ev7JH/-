@@ -47,7 +47,7 @@ export default {
   name: 'App',
   data() {
     return {
-      videoSource: '/videos/my-video.mp4',
+      videoSource: '/-/videos/my-video.mp4',
       instagramLink: 'https://www.instagram.com/kasschey?igsh=cjRuanlkMHJwOHF4',
       isMuted: true
     }
